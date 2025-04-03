@@ -1,0 +1,13 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle -->
+  <circle cx="60" cy="60" r="55" stroke="#f5a623" stroke-width="1.5" fill="none"/>
+  
+  <!-- Inner circle with cream color -->
+  <circle cx="60" cy="60" r="40" stroke="#f5a623" stroke-width="1" fill="#fff5e6"/>
+  
+  <!-- Salmon-colored segment/arc -->
+  <path d="M60 20 A40 40 0 0 1 95 60 L60 60 Z" fill="#f5a623" fill-opacity="0.4"/>
+  
+  <!-- Handle -->
+  <path d="M95 95 L115 115" stroke="#f5a623" stroke-width="1.5" stroke-linecap="round"/>
+</svg> 

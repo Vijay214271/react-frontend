@@ -1,0 +1,196 @@
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 40px 40px 60px 80px;
+  background-color: #FFF7EC;
+  min-height: 826px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1439px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .leftBackground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 123px;
+    z-index: 1;
+    
+    .curvesSvg {
+      height: 578px;
+      width: 100%;
+      object-fit: contain;
+      object-position: left center;
+      opacity: 0.8;
+    }
+  }
+
+  .rightBackground {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    
+    .patternImage {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: right center;
+      opacity: 0.9;
+    }
+  }
+
+  .content {
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    z-index: 2;
+    padding-right: 40px;
+    margin-left: 60px;
+    margin-top: 30px;
+  }
+
+  .headline {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #212121;
+    line-height: 1.25;
+    margin-bottom: 25px;
+    padding: 0;
+    display: block;
+    max-width: 650px;
+
+    .highlight {
+      color: #f5a623;
+    }
+  }
+
+  .subheadline {
+    font-size: 0.95rem;
+    color: #5f5f5f;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    max-width: 550px;
+  }
+
+  .ctaButton {
+    background-color: #f5a623;
+    color: #333;
+    border: none;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken(#f5a623, 10%);
+    }
+  }
+
+  .magnifierWrapper {
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    display: flex;
+    align-items: center;
+    z-index: 3;
+    
+    .bracketLeft, .bracketRight {
+      font-size: 50px;
+      color: rgba(245, 166, 35, 0.7);
+      font-weight: 300;
+    }
+    
+    .magnifierSvg {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 60px 40px;
+    
+    .content {
+      max-width: 60%;
+      flex: 0 0 60%;
+      margin-left: 0;
+    }
+    
+    .rightBackground {
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+    min-height: auto;
+
+    .leftBackground {
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+    }
+    
+    .rightBackground {
+      width: 100%;
+      opacity: 0.2;
+    }
+
+    .content {
+      max-width: 100%;
+      flex: 1 0 auto;
+      padding-right: 0;
+      margin-left: 0;
+    }
+
+    .headline, .subheadline {
+      max-width: 100%;
+    }
+
+    .magnifierWrapper {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      justify-content: center;
+      margin: 30px auto 0;
+      
+      .bracketLeft, .bracketRight {
+        font-size: 40px;
+      }
+      
+      .magnifierSvg {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
