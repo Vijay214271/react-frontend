@@ -11,7 +11,6 @@ const Hero = () => {
   const [end, setEnd] = useState("");
 
   useEffect(() => {
-    // Fetch headline from Spring Boot API
     axios
       .get(`${import.meta.env.VITE_APP_API_URL}`)
       .then((response) => setHeadline(response.data.headline))
@@ -22,16 +21,21 @@ const Hero = () => {
     const words = headline.split(" ");
     const total = words.length;
 
-    if (total <= 3) {
+    const highlightStartIndex = 3; // Start from 4th word
+    const highlightLength = 3; // Highlight 3 words
+
+    if (total <= highlightStartIndex) {
       setStart(words.join(" "));
       setHighlight("");
       setEnd("");
     } else {
-      const midStart = Math.floor(total / 2) - 1;
-      const midEnd = midStart + 3; // Highlight 3 words
-      setStart(words.slice(0, midStart).join(" "));
-      setHighlight(words.slice(midStart, midEnd).join(" "));
-      setEnd(words.slice(midEnd).join(" "));
+      setStart(words.slice(0, highlightStartIndex).join(" "));
+      setHighlight(
+        words
+          .slice(highlightStartIndex, highlightStartIndex + highlightLength)
+          .join(" ")
+      );
+      setEnd(words.slice(highlightStartIndex + highlightLength).join(" "));
     }
   }, [headline]);
 
@@ -58,7 +62,7 @@ const Hero = () => {
             <>
               Hyper boost your{" "}
               <span className={styles.highlight}>
-                Revenue Management, Marketing
+                Revenue Management Marketing
               </span>{" "}
               and Commercial Functions with Business Ready AI
             </>
