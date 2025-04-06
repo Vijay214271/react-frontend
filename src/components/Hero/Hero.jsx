@@ -10,8 +10,9 @@ const Hero = () => {
   useEffect(() => {
     // Fetch headline from Spring Boot API
     axios
-      .get("http://localhost:8080/api/headline")
-      .then((response) => setHeadline(response.data))
+      .get(`${import.meta.env.VITE_APP_API_URL}`)
+
+      .then((response) => setHeadline(response.data.headline))
       .catch((error) => console.error("Error fetching headline:", error));
   }, []);
 
@@ -36,7 +37,7 @@ const Hero = () => {
               </span>
             </>
           ) : (
-            "Loading..."
+            "Hyper boost your Revenue Management, Marketing and Commercial Functions with Business Ready AI"
           )}
         </h1>
         <p className={styles.subheadline}>

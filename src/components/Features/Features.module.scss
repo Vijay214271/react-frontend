@@ -36,14 +36,14 @@
     &.row1 {
       margin-bottom: 80px;
       justify-content: center;
-      gap: 160px;
+      gap: 300px;
     }
     
     &.row2 {
       margin-top: 80px;
       justify-content: space-between;
-      padding: 0 100px;
-      gap: 200px; 
+      padding: 0 20px;
+      gap: 240px; 
     }
   }
   
@@ -85,24 +85,69 @@
   .connector {
     position: absolute;
     top: 50%;
-    left: 150px;
-    right: 150px;
+    left: 0;
+    right: 0;
     transform: translateY(-50%);
+    height: 8px;
     display: flex;
     justify-content: center;
+    align-items: center;
     
-    .timelineLine {
-      width: 90%;
-      height: 8px;
-      object-fit: contain;
+    .whiteBar {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #F0F0F0;
+      border-radius: 4px;
+      z-index: 1;
     }
     
-    .timelineDot {
+    .greenBar {
       position: absolute;
+      width: 5%;
+      height: 100%;
+      background-color: #41C185;
+      border-radius: 4px;
+      z-index: 2;
+      left: 0;
+    }
+    
+    .specialDot {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      transform: translateX(-50%) translateY(-50%);
+      z-index: 4;
       top: 50%;
-      transform: translate(-50%, -50%);
+      
+      .whiteDotBg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+      }
+      
+      .greenDotCenter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 12px;
+      }
+    }
+    
+    .greenDot {
+      position: absolute;
       width: 12px;
       height: 12px;
+      background-color: #41C185;
+      border-radius: 50%;
+      z-index: 3;
+      transform: translateX(-50%) translateY(-50%);
+      top: 50%;
     }
   }
   
@@ -114,15 +159,6 @@
       
       &.row2 {
         padding: 0 60px;
-      }
-    }
-    
-    .connector {
-      left: 80px;
-      right: 80px;
-      
-      .timelineLine {
-        width: 95%;
       }
     }
   }
@@ -144,15 +180,6 @@
     
     .featureItem {
       width: 160px;
-    }
-    
-    .connector {
-      left: 40px;
-      right: 40px;
-      
-      .timelineLine {
-        width: 100%;
-      }
     }
   }
   
@@ -179,4 +206,26 @@
       display: none;
     }
   }
-} 
+}
+
+.features {
+  position: relative;
+  padding: 0px 20px;
+  background-image: url('../../assets/Background\ pattern\ \(1\).svg'); // <-- Replace with actual path
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  // z-index: 1;
+
+  // Optional overlay for better contrast with text/icons
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85); // or darken it with rgba(0,0,0,0.5)
+    z-index: -1;
+  }
+}

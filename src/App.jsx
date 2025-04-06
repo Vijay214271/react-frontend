@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom"
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Features from "./components/Features/Features";
 import "./App.css"; // Keep existing App specific styles if any
+import CmsPage from "./pages/CmsPage";
 
-function App() {
+function Land() {
   const [headline, setHeadline] = useState("Loading...");
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/headline")
+      .get("http://localhost:8080/cms")
       .then((response) => setHeadline(response.data))
       .catch((error) => console.error("Error fetching headline:", error));
   }, []);
@@ -28,6 +30,19 @@ function App() {
       <Features />
     </div>
   );
+}
+
+function App() {
+  return (
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Land />} />
+          <Route path="/cms" element={<CmsPage />} />
+        </Routes>
+      </Router>
+    </div>
+  )
 }
 
 export default App;

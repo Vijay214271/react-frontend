@@ -1,9 +1,10 @@
+@use "sass:color";
 .hero {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding: 40px 40px 60px 80px;
-  background-color: #FFF7EC;
+  background: linear-gradient(to bottom, #ffffff 0%, #FFF7EC 100%);
   min-height: 826px;
   position: relative;
   overflow: hidden;
@@ -33,7 +34,7 @@
     z-index: 1;
     
     .curvesSvg {
-      height: 578px;
+      height: 540px;
       width: 100%;
       object-fit: contain;
       object-position: left center;
@@ -105,8 +106,9 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 
+    
     &:hover {
-      background-color: darken(#f5a623, 10%);
+      background-color: color.adjust(#f5a623, $lightness: -10%);
     }
   }
 
