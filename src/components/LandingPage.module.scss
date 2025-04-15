@@ -1,47 +1,118 @@
 .container {
-    font-family: "Inter", sans-serif;
-    max-width: 1200px;
-    margin: auto;
+  font-family: "Inter", sans-serif;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.navLinks a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.hero {
+  text-align: left;
+  margin-top: 50px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  max-width: 600px;
+  color: #666;
+}
+
+.cta {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ffb700;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .container {
     padding: 20px;
   }
   
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-  }
-  
-  .navLinks a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-  }
-  
-  .hero {
-    text-align: left;
-    margin-top: 50px;
-  }
-  
   .hero h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
+    font-size: 2.4rem;
   }
-  
+
   .hero p {
-    font-size: 1.1rem;
-    margin-top: 10px;
-    max-width: 600px;
-    color: #666;
+    font-size: 1rem;
   }
-  
+
   .cta {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: #ffb700;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
+    padding: 8px 16px;
   }
-  
+}
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .cta {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  .cta {
+    padding: 12px 24px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .cta {
+    padding: 10px 20px;
+  }
+}

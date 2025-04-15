@@ -32,6 +32,7 @@
   
   .featureRow {
     display: flex;
+    flex-wrap: wrap;
     
     &.row1 {
       margin-bottom: 80px;
@@ -43,7 +44,7 @@
       margin-top: 80px;
       justify-content: space-between;
       padding: 0 20px;
-      gap: 240px; 
+      gap: 240px;
     }
   }
   
@@ -206,18 +207,13 @@
       display: none;
     }
   }
-}
 
-.features {
-  position: relative;
-  padding: 0px 20px;
-  background-image: url('../../assets/Background\ pattern\ \(1\).svg'); // <-- Replace with actual path
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  // z-index: 1;
+  /* Background Image adjustments for mobile */
+  @media (max-width: 767px) {
+    background-image: url('../../assets/Background-pattern-mobile.png'); /* Update with a mobile version of the background image */
+  }
 
-  // Optional overlay for better contrast with text/icons
+  /* Optional overlay for better contrast with text/icons */
   &::before {
     content: '';
     position: absolute;
@@ -225,7 +221,7 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.85); // or darken it with rgba(0,0,0,0.5)
+    background: rgba(255, 255, 255, 0.85); /* Optionally darken with rgba(0, 0, 0, 0.5) for better contrast */
     z-index: -1;
   }
 }

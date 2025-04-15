@@ -1,4 +1,5 @@
 @use "sass:color";
+
 .hero {
   display: flex;
   align-items: flex-start;
@@ -32,7 +33,7 @@
     bottom: 0;
     width: 123px;
     z-index: 1;
-    
+
     .curvesSvg {
       height: 540px;
       width: 100%;
@@ -51,7 +52,7 @@
     z-index: 1;
     display: flex;
     justify-content: flex-end;
-    
+
     .patternImage {
       height: 100%;
       width: auto;
@@ -106,7 +107,6 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 
-    
     &:hover {
       background-color: color.adjust(#f5a623, $lightness: -10%);
     }
@@ -119,13 +119,14 @@
     display: flex;
     align-items: center;
     z-index: 3;
-    
-    .bracketLeft, .bracketRight {
+
+    .bracketLeft,
+    .bracketRight {
       font-size: 50px;
       color: rgba(245, 166, 35, 0.7);
       font-weight: 300;
     }
-    
+
     .magnifierSvg {
       width: 120px;
       height: 120px;
@@ -133,49 +134,73 @@
   }
 }
 
+/* Responsive for tablets */
 @media (max-width: 1024px) {
   .hero {
     padding: 60px 40px;
-    
+
     .content {
       max-width: 60%;
       flex: 0 0 60%;
       margin-left: 0;
     }
-    
+
     .rightBackground {
       width: 40%;
     }
   }
 }
 
+/* Responsive for mobile */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
     text-align: center;
+    align-items: center;
     padding: 40px 20px;
     min-height: auto;
 
-    .leftBackground {
-      width: 100%;
-      height: 100%;
-      opacity: 0.3;
+    .background {
+      position: absolute;
     }
-    
+
+    .leftBackground,
     .rightBackground {
+      position: absolute;
       width: 100%;
+      height: auto;
       opacity: 0.2;
+    }
+
+    .leftBackground {
+      top: 0;
+    }
+
+    .rightBackground {
+      bottom: 0;
     }
 
     .content {
       max-width: 100%;
       flex: 1 0 auto;
-      padding-right: 0;
+      padding: 0;
       margin-left: 0;
+      margin-top: 20px;
+      z-index: 2;
     }
 
-    .headline, .subheadline {
+    .headline {
+      font-size: 2rem;
       max-width: 100%;
+    }
+
+    .subheadline {
+      font-size: 0.95rem;
+      max-width: 100%;
+    }
+
+    .ctaButton {
+      margin-top: 20px;
     }
 
     .magnifierWrapper {
@@ -184,11 +209,12 @@
       right: auto;
       justify-content: center;
       margin: 30px auto 0;
-      
-      .bracketLeft, .bracketRight {
+
+      .bracketLeft,
+      .bracketRight {
         font-size: 40px;
       }
-      
+
       .magnifierSvg {
         width: 100px;
         height: 100px;

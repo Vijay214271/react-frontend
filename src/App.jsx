@@ -12,7 +12,7 @@ function Land() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/cms")
+      .get(`${import.meta.env.VITE_APP_API_URL}`)
       .then((response) => setHeadline(response.data))
       .catch((error) => console.error("Error fetching headline:", error));
   }, []);
