@@ -9,7 +9,7 @@ const CmsPage = () => {
   useEffect(() => {
     // Fetch existing headline from backend
     axios.get(`${import.meta.env.VITE_APP_API_URL}`)
-      .then(res => setHeadline(res.data.headline)) // ✅ Fixed typo here
+      .then(res => setHeadline(res.data.headline))
       .catch(err => console.error(err));
   }, []);
 
@@ -24,7 +24,7 @@ const CmsPage = () => {
 
   return (
     <div className="container mt-5 p-4 rounded shadow bg-light" style={{ maxWidth: '600px' }}>
-      <h4 className="mb-3">Headline</h4>
+      <h4 className="mb-3 text-center">Headline</h4>
       <textarea
         className="form-control mb-3"
         value={headline}
